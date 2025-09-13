@@ -1,0 +1,11 @@
+{
+  "id": "aiostreams-private",
+  "name": "AIOStreams (Private)",
+  "version": "1.0.0",
+  "description": "Self-hosted private instance of AIOStreams with your own addons, deduplication, and RealDebrid integration.",
+  "logo": "https://stremio.com/website/stremio-logo-small.png",
+  "contactEmail": "you@example.com",
+  "resources": [],
+  "types": ["movie", "series"],
+  "idPrefixes": ["tt", "tmdb", "tvdb"]
+}
