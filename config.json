@@ -1,0 +1,160 @@
+{
+  "services": [
+    {
+      "id": "realdebrid",
+      "enabled": true,
+      "credentials": {
+        "apiKey": "AGJ24ZZJI7UC6HCSXN5D4MU6ZMFWRVDMJODEXSABKDNFGCGQQDBA"
+      }
+    },
+    {
+      "id": "debridio",
+      "enabled": true,
+      "credentials": {
+        "apiKey": "ccbf2d108453d092f46de9f075aa1ab8"
+      }
+    }
+  ],
+  "presets": [
+    {
+      "type": "custom",
+      "instanceId": "8ff",
+      "enabled": true,
+      "options": {
+        "name": "Debridio",
+        "manifestUrl": "stremio://addon.debridio.com/manifest.json",
+        "libraryAddon": true,
+        "resultPassthrough": false,
+        "forceToTop": true,
+        "timeout": 10000
+      }
+    },
+    {
+      "type": "custom",
+      "instanceId": "b4d",
+      "enabled": true,
+      "options": {
+        "name": "Comet",
+        "manifestUrl": "stremio://comet.elfhosted.com/manifest.json",
+        "libraryAddon": true,
+        "resultPassthrough": false,
+        "forceToTop": false,
+        "timeout": 10000
+      }
+    },
+    {
+      "type": "custom",
+      "instanceId": "047",
+      "enabled": true,
+      "options": {
+        "name": "YouTube",
+        "manifestUrl": "stremio://youtubio.elfhosted.com/manifest.json",
+        "libraryAddon": false,
+        "resultPassthrough": false,
+        "forceToTop": false,
+        "timeout": 10000
+      }
+    },
+    {
+      "type": "custom",
+      "instanceId": "25f",
+      "enabled": true,
+      "options": {
+        "name": "Tv",
+        "manifestUrl": "stremio://tv-addon.debridio.com/manifest.json",
+        "libraryAddon": false,
+        "resultPassthrough": false,
+        "forceToTop": false,
+        "timeout": 10000
+      }
+    },
+    {
+      "type": "custom",
+      "instanceId": "b93",
+      "enabled": true,
+      "options": {
+        "name": "Auto steam",
+        "manifestUrl": "stremio://autostream-addon.onrender.com/manifest.json?fallback=1&rd=AGJ24ZZJI7UC6HCSXN5D4MU6ZMFWRVDMJODEXSABKDNFGCGQQDBA&include_nuvio=1&nuvio=1",
+        "libraryAddon": true,
+        "resultPassthrough": false,
+        "forceToTop": false,
+        "timeout": 10000
+      }
+    },
+    {
+      "type": "custom",
+      "instanceId": "d54",
+      "enabled": true,
+      "options": {
+        "name": "Tvdb",
+        "manifestUrl": "https://tvdb-addon.debridio.com/manifest.json",
+        "libraryAddon": true,
+        "resultPassthrough": false,
+        "forceToTop": false,
+        "timeout": 10000
+      }
+    },
+    {
+      "type": "custom",
+      "instanceId": "ac0",
+      "enabled": true,
+      "options": {
+        "name": "Anime Trending",
+        "manifestUrl": "stremio://1fe84bc728af-stremio-mdblist.baby-beamup.club/trending-anime/manifest.json",
+        "libraryAddon": true,
+        "resultPassthrough": false,
+        "forceToTop": false,
+        "timeout": 10000
+      }
+    },
+    {
+      "type": "custom",
+      "instanceId": "89e",
+      "enabled": true,
+      "options": {
+        "name": "Recommend",
+        "manifestUrl": "stremio://aiolists.elfhosted.com/manifest.json",
+        "libraryAddon": true,
+        "resultPassthrough": false,
+        "forceToTop": false,
+        "timeout": 10000
+      }
+    }
+  ],
+  "formatter": {
+    "id": "custom",
+    "definition": {
+      "name": "{addon.name}{stream.resolution::exists[\" | {stream.resolution}\"||\"\"]}{stream.quality::exists[\" {stream.quality}\"||\"\"]}",
+      "description": "{stream.languages::exists[\"{stream.languages::join(', ')}\"||\"\"]}"
+    }
+  },
+  "preferredQualities": [
+    "BluRay REMUX","BluRay","WEB-DL","WEBRip","HDRip","HC HD-Rip","DVDRip","HDTV","CAM","TS","TC","SCR","Unknown"
+  ],
+  "preferredResolutions": ["2160p","1440p","1080p","720p","576p","480p","360p","240p","144p","Unknown"],
+  "excludedQualities": ["CAM","SCR","TS","TC"],
+  "excludedVisualTags": ["3D"],
+  "sortCriteria": {
+    "global": [
+      {"key":"language","direction":"desc"},
+      {"key":"resolution","direction":"desc"},
+      {"key":"cached","direction":"desc"},
+      {"key":"library","direction":"desc"},
+      {"key":"size","direction":"desc"}
+    ],
+    "anime": [
+      {"key":"language","direction":"desc"},
+      {"key":"resolution","direction":"desc"}
+    ]
+  },
+  "deduplicator": {
+    "enabled": true,
+    "multiGroupBehaviour": "aggressive",
+    "keys": ["filename","infoHash"],
+    "cached": "single_result",
+    "uncached": "per_service",
+    "p2p": "single_result"
+  },
+  "preferredLanguages": ["English"],
+  "useCinemetaMeta": true
+}
